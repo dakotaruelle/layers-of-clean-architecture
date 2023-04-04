@@ -1,0 +1,15 @@
+### GET all students
+GET http://localhost:5152/students
+Accept: application/json
+
+### GET student with courses
+GET http://localhost:5152/students/4
+Accept: application/json
+
+### Add course for student
+POST http://localhost:5152/students/4
+Content-Type: application/json
+
+{
+  "title": "Brooding 101"
+}
