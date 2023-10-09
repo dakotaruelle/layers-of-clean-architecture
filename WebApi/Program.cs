@@ -1,5 +1,6 @@
+using Gateways;
+using Interactors;
 using Microsoft.EntityFrameworkCore;
-using WebApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<DatabaseContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DatabaseContextConnectionString")));
 
-builder.Services.AddScoped<StudentsGateway, StudentsGateway>();
+builder.Services.AddScoped<IStudentsGateway, StudentsGateway>();
 builder.Services.AddScoped<StudentsInteractor, StudentsInteractor>();
 
 builder.Services.AddControllers();

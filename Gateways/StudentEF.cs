@@ -1,15 +1,18 @@
-namespace WebApi;
+using Microsoft.EntityFrameworkCore;
 
-public class Student
+namespace Gateways;
+
+[PrimaryKey(nameof(StudentId))]
+public class StudentEF
 {
     public int StudentId { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public DateTime EnrollmentDate { get; set; }
-    public List<Course> Courses { get; set; }
 }
 
-public class Course
+[PrimaryKey(nameof(CourseId))]
+public class CourseEF
 {
     public int CourseId { get; set; }
     public int StudentId { get; set; }

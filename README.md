@@ -38,3 +38,11 @@ The previous changes organized all the logic into their respective layers. This 
 and adds a new set of models specifically for the business layer. The goal is to remove the data access types from being
 used throughout the other layers. Now, when data is retrieved from the gateway, it return business layer types instead
 of data access layer types.
+
+## Move Business and Data Access Layers into Separate Projects
+
+Functionally, nothing is changed in this commit. The business and data access logic are now in their own separate
+projects. However, in order for the data access layer to depend on the business layer, the gateway now implements an 
+interface in the business layer. In .NET land, this means that the `Gateways` project has a reference to the `Interactors` 
+project. This ensures that dependencies are pointed "inwards", in other words, that the business layer is the core of 
+the application.

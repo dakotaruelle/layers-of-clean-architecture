@@ -1,3 +1,4 @@
+using Interactors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi;
@@ -6,10 +7,10 @@ namespace WebApi;
 [Route("[controller]")]
 public class StudentsController : ControllerBase
 {
-    private readonly StudentsGateway _studentsGateway;
+    private readonly IStudentsGateway _studentsGateway;
     private readonly StudentsInteractor _studentsInteractor;
 
-    public StudentsController(StudentsGateway studentsGateway, StudentsInteractor studentsInteractor)
+    public StudentsController(IStudentsGateway studentsGateway, StudentsInteractor studentsInteractor)
     {
         _studentsGateway = studentsGateway;
         _studentsInteractor = studentsInteractor;

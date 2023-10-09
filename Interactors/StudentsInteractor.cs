@@ -1,10 +1,10 @@
-namespace WebApi;
+namespace Interactors;
 
 public class StudentsInteractor
 {
-    private readonly StudentsGateway _studentsGateway;
+    private readonly IStudentsGateway _studentsGateway;
 
-    public StudentsInteractor(StudentsGateway studentsGateway)
+    public StudentsInteractor(IStudentsGateway studentsGateway)
     {
         _studentsGateway = studentsGateway;
     }
