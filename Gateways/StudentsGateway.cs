@@ -1,3 +1,5 @@
+using GatewayModels;
+using InteractorGatewayTranslations;
 using Interactors;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,7 +18,7 @@ public class StudentsGateway : IStudentsGateway
     {
         var students = await _context.Students.ToListAsync();
 
-        return students.Select(s => MapToStudent(s, new List<CourseEF>()));
+        return students.Select(s => StudentMapper.MapToStudent(s, new List<CourseEF>()));
     }
 
     public async Task<Student> GetStudent(int studentId)
@@ -26,7 +28,7 @@ public class StudentsGateway : IStudentsGateway
             .FirstOrDefaultAsync();
         var courses = await GetCoursesForStudent(studentId);
 
-        return MapToStudent(student, courses);
+        return StudentMapper.MapToStudent(student, courses);
     }
 
     private async Task<IEnumerable<CourseEF>> GetCoursesForStudent(int studentId)
@@ -38,17 +40,5 @@ public class StudentsGateway : IStudentsGateway
     {
         _context.Courses.Add(new CourseEF { Title = courseTitle, StudentId = studentId });
         await _context.SaveChangesAsync();
-    }
-
-    private Student MapToStudent(StudentEF student, IEnumerable<CourseEF> courses)
-    {
-        return new Student
-        {
-            FirstName = student.FirstName,
-            LastName = student.LastName,
-            EnrollmentDate = student.EnrollmentDate,
-            Courses = courses
-                .Select(c => new Course { CourseId = c.CourseId, StudentId = c.StudentId, Title = c.Title }).ToList()
-        };
     }
 }

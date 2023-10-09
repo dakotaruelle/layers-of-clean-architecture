@@ -46,3 +46,9 @@ projects. However, in order for the data access layer to depend on the business 
 interface in the business layer. In .NET land, this means that the `Gateways` project has a reference to the `Interactors` 
 project. This ensures that dependencies are pointed "inwards", in other words, that the business layer is the core of 
 the application.
+
+## Move Translation Logic into Separate Project
+
+This is a smaller change. It moves the mapping logic from data access types to business types. While not strictly
+necessary, in a larger project with lots of types and many interactors/gateways, it might be useful to have this logic
+in a dedicated project.

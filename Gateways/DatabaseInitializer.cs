@@ -1,3 +1,5 @@
+using GatewayModels;
+
 namespace Gateways;
 
 public static class DbInitializer

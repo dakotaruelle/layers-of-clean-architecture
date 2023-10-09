@@ -4,16 +4,10 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <RootNamespace>EFGateway</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.9" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\GatewayModels\GatewayModels.csproj" />
-      <ProjectReference Include="..\InteractorGatewayTranslations\InteractorGatewayTranslations.csproj" />
       <ProjectReference Include="..\Interactors\Interactors.csproj" />
     </ItemGroup>
 

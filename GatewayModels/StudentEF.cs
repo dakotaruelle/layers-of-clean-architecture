@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace Gateways;
+namespace GatewayModels;
 
 [PrimaryKey(nameof(StudentId))]
 public class StudentEF
@@ -9,12 +9,4 @@ public class StudentEF
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public DateTime EnrollmentDate { get; set; }
-}
-
-[PrimaryKey(nameof(CourseId))]
-public class CourseEF
-{
-    public int CourseId { get; set; }
-    public int StudentId { get; set; }
-    public string Title { get; set; }
 }

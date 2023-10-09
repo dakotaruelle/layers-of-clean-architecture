@@ -1,3 +1,4 @@
+using GatewayModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace Gateways;
