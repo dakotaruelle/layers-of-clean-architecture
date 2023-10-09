@@ -26,3 +26,8 @@ perform all logic related to querying the database and returning those results.
 Similar to the last set of changes, this moves business logic out of the controller and into a dedicated interactor
 class. It is the job of the interactor to coordinate between the controller, gateway, and entities (coming later), to
 perform the use cases of the application.
+
+## Move UI Logic to Presenter
+
+This moves the UI Logic (i.e. formatting of responses to the UI) to a presenter class. It is the job of the presenter
+to handle the concerns that only the UI cares about.

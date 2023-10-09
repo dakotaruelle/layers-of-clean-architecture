@@ -31,14 +31,9 @@ public class StudentsController : ControllerBase
         {
             return NotFound();
         }
-    
-        var studentCourses = new UIStudentCourses
-        {
-            Fullname = $"{student.FirstName} {student.LastName}",
-            Courses = courses.Select(course => new UICourse { Id = course.CourseId, Title = course.Title }).ToList()
-        };
 
-        return studentCourses;
+        var studentsPresenter = new StudentsPresenter();
+        return studentsPresenter.MapToUiStudentCourses(student, courses);
     }
 
     [HttpPost("{id}")]
@@ -52,21 +47,4 @@ public class StudentsController : ControllerBase
 
         return Ok();
     }
-}
-
-public class UIStudentCourses
-{
-    public string Fullname { get; set; }
-    public IEnumerable<UICourse> Courses { get; set; }
-}
-
-public class UICourse
-{
-    public int Id { get; set; }
-    public string Title { get; set; }
-}
-
-public class CourseRequest
-{
-    public string Title { get; set; }
 }
