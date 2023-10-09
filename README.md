@@ -59,3 +59,10 @@ Until now, the entities have resided in the `Interactors` project. In smaller ap
 many situations the entities should include core business logic and be the real core of the system. The job of the 
 interactors is to orchestrate the necessary application logic between entities, gateways, and controllers in order to
 do something useful.
+
+## Remove Gateway References from Controllers
+
+An argument could be made that if a controller needs simple data access, then referencing a gateway directly is fine.
+This does muddy the waters a bit though, and it's easy for the controller to overstep its responsibility. This change
+removes all gateway references from the controller so that all data access is done through interactors. This allows the
+interactors the opportunity to perform any necessary business logic before returning a result.

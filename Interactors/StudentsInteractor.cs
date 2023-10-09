@@ -1,3 +1,5 @@
+using Entities;
+
 namespace Interactors;
 
 public class StudentsInteractor
@@ -25,5 +27,15 @@ public class StudentsInteractor
         await _studentsGateway.AddCourseForStudent(studentId, courseTitle);
 
         return true;
+    }
+    
+    public async Task<IEnumerable<Student>> GetStudents()
+    {
+        return await _studentsGateway.GetAllStudents();
+    }
+
+    public async Task<Student> GetStudent(int studentId)
+    {
+        return await _studentsGateway.GetStudent(studentId);
     }
 }

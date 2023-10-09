@@ -8,26 +8,23 @@ namespace WebApi;
 [Route("[controller]")]
 public class StudentsController : ControllerBase
 {
-    private readonly IStudentsGateway _studentsGateway;
     private readonly StudentsInteractor _studentsInteractor;
 
-    public StudentsController(IStudentsGateway studentsGateway, StudentsInteractor studentsInteractor)
+    public StudentsController(StudentsInteractor studentsInteractor)
     {
-        _studentsGateway = studentsGateway;
         _studentsInteractor = studentsInteractor;
     }
 
     [HttpGet]
     public async Task<IEnumerable<Student>> GetStudents()
     {
-        return await _studentsGateway.GetAllStudents();
+        return await _studentsInteractor.GetStudents();
     }
 
     [HttpGet("{id}")]
     public async Task<ActionResult<UIStudentCourses>> GetStudentWithCourses(int id)
     {
-        var student = await _studentsGateway.GetStudent(id);
-    
+        var student = await _studentsInteractor.GetStudent(id);
         if (student == null)
         {
             return NotFound();
