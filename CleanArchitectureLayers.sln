@@ -6,9 +6,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateways", "Gateways\Gatewa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interactors", "Interactors\Interactors.csproj", "{67E9EB2F-F6B6-4A4C-8580-6D07D67B6CD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteractorGatewayTranslations", "InteractorGatewayTranslations\InteractorGatewayTranslations.csproj", "{CD2C6FDA-E4FA-44B2-AE38-C5C4A6DEE4D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityGatewayTranslations", "EntityGatewayTranslations\EntityGatewayTranslations.csproj", "{CD2C6FDA-E4FA-44B2-AE38-C5C4A6DEE4D8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewayModels", "GatewayModels\GatewayModels.csproj", "{AE4BAE98-0FB8-412D-8142-FE8EEDA71C73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{876C859F-EDE2-4D8D-B625-19707A8772B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,5 +38,9 @@ Global
 		{AE4BAE98-0FB8-412D-8142-FE8EEDA71C73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE4BAE98-0FB8-412D-8142-FE8EEDA71C73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE4BAE98-0FB8-412D-8142-FE8EEDA71C73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{876C859F-EDE2-4D8D-B625-19707A8772B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{876C859F-EDE2-4D8D-B625-19707A8772B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{876C859F-EDE2-4D8D-B625-19707A8772B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{876C859F-EDE2-4D8D-B625-19707A8772B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

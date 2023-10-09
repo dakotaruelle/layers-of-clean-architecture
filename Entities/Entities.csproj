@@ -6,9 +6,4 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\GatewayModels\GatewayModels.csproj" />
-      <ProjectReference Include="..\Interactors\Interactors.csproj" />
-    </ItemGroup>
-
 </Project>

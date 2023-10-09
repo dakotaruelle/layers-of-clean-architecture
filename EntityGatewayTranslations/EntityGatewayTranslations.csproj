@@ -4,10 +4,12 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <RootNamespace>InteractorGatewayTranslations</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Entities\Entities.csproj" />
+      <ProjectReference Include="..\GatewayModels\GatewayModels.csproj" />
     </ItemGroup>
 
 </Project>

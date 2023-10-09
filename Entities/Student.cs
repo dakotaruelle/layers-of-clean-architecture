@@ -1,4 +1,4 @@
-namespace Interactors;
+namespace Entities;
 
 public class Student
 {
@@ -7,11 +7,9 @@ public class Student
     public string LastName { get; set; }
     public DateTime EnrollmentDate { get; set; }
     public List<Course> Courses { get; set; }
-}
 
-public class Course
-{
-    public int CourseId { get; set; }
-    public int StudentId { get; set; }
-    public string Title { get; set; }
+    public string GetFullname()
+    {
+        return $"{FirstName} {LastName}";
+    }
 }

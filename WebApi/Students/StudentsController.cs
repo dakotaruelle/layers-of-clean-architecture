@@ -1,3 +1,4 @@
+using Entities;
 using Interactors;
 using Microsoft.AspNetCore.Mvc;
 

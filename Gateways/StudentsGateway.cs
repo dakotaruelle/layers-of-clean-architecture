@@ -1,3 +1,4 @@
+using Entities;
 using GatewayModels;
 using InteractorGatewayTranslations;
 using Interactors;

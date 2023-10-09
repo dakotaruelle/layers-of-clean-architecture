@@ -1,4 +1,4 @@
-using Interactors;
+using Entities;
 
 namespace WebApi;
 
@@ -11,7 +11,7 @@ public class StudentsPresenter
 
         var studentCourses = new UIStudentCourses
         {
-            Fullname = $"{student.FirstName} {student.LastName}",
+            Fullname = student.GetFullname(),
             Courses = uiCourses
         };
 

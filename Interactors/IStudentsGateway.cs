@@ -1,3 +1,5 @@
+using Entities;
+
 namespace Interactors;
 
 public interface IStudentsGateway

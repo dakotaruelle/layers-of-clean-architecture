@@ -1,5 +1,5 @@
+using Entities;
 using GatewayModels;
-using Interactors;
 
 namespace InteractorGatewayTranslations;
 

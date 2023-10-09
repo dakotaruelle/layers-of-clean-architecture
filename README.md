@@ -52,3 +52,10 @@ the application.
 This is a smaller change. It moves the mapping logic from data access types to business types. While not strictly
 necessary, in a larger project with lots of types and many interactors/gateways, it might be useful to have this logic
 in a dedicated project.
+
+## Move Entities into Separate Project
+
+Until now, the entities have resided in the `Interactors` project. In smaller applications, this might be fine. But in
+many situations the entities should include core business logic and be the real core of the system. The job of the 
+interactors is to orchestrate the necessary application logic between entities, gateways, and controllers in order to
+do something useful.
