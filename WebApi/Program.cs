@@ -9,6 +9,7 @@ builder.Services.AddDbContext<DatabaseContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DatabaseContextConnectionString")));
 
 builder.Services.AddScoped<StudentsGateway, StudentsGateway>();
+builder.Services.AddScoped<StudentsInteractor, StudentsInteractor>();
 
 builder.Services.AddControllers();
 

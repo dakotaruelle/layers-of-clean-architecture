@@ -7,10 +7,12 @@ namespace WebApi;
 public class StudentsController : ControllerBase
 {
     private readonly StudentsGateway _studentsGateway;
+    private readonly StudentsInteractor _studentsInteractor;
 
-    public StudentsController(StudentsGateway studentsGateway)
+    public StudentsController(StudentsGateway studentsGateway, StudentsInteractor studentsInteractor)
     {
         _studentsGateway = studentsGateway;
+        _studentsInteractor = studentsInteractor;
     }
 
     [HttpGet]
@@ -35,27 +37,19 @@ public class StudentsController : ControllerBase
             Fullname = $"{student.FirstName} {student.LastName}",
             Courses = courses.Select(course => new UICourse { Id = course.CourseId, Title = course.Title }).ToList()
         };
-    
+
         return studentCourses;
     }
 
     [HttpPost("{id}")]
     public async Task<IActionResult> AddCourseForStudent(int id, CourseRequest courseRequest)
     {
-        var existingStudent = await _studentsGateway.GetStudent(id);
-        if (existingStudent == null)
+        var result = await _studentsInteractor.AddCourseForStudent(id, courseRequest.Title);
+        if (!result)
         {
             return BadRequest();
         }
 
-        var existingCourses = await _studentsGateway.GetCoursesForStudent(id);
-        if (existingCourses.Any(existingCourse => existingCourse.Title == courseRequest.Title))
-        {
-            return BadRequest();
-        }
-
-        await _studentsGateway.AddCourseForStudent(id, courseRequest.Title);
-        
         return Ok();
     }
 }

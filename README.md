@@ -20,3 +20,9 @@ This is the starting point of the application. There is no architecture, just a 
 The controller was directly accessing the database context (using Entity Framework as an ORM) to perform data
 retrieval. This set of changes moves all data access logic to a gateway class. It is the job of this class to
 perform all logic related to querying the database and returning those results.
+
+## Move Business Logic to Interactor
+
+Similar to the last set of changes, this moves business logic out of the controller and into a dedicated interactor
+class. It is the job of the interactor to coordinate between the controller, gateway, and entities (coming later), to
+perform the use cases of the application.
