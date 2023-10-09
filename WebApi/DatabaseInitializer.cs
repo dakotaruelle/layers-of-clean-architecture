@@ -10,32 +10,32 @@ public static class DbInitializer
             return; // DB has been seeded
         }
 
-        var students = new Student[]
+        var students = new StudentEF[]
         {
-            new Student
+            new StudentEF
             {
                 FirstName = "Carson", LastName = "Alexander", EnrollmentDate = DateTime.Parse("2019-09-01")
             },
-            new Student
+            new StudentEF
             {
                 FirstName = "Meredith", LastName = "Alonso", EnrollmentDate = DateTime.Parse("2017-09-01")
             },
-            new Student { FirstName = "Arturo", LastName = "Anand", EnrollmentDate = DateTime.Parse("2018-09-01") },
-            new Student { FirstName = "Bruce", LastName = "Wayne", EnrollmentDate = DateTime.Parse("1996-06-26") },
+            new StudentEF { FirstName = "Arturo", LastName = "Anand", EnrollmentDate = DateTime.Parse("2018-09-01") },
+            new StudentEF { FirstName = "Bruce", LastName = "Wayne", EnrollmentDate = DateTime.Parse("1996-06-26") },
         };
 
         context.Students.AddRange(students);
         context.SaveChanges();
 
-        var courses = new Course[]
+        var courses = new CourseEF[]
         {
-            new Course { StudentId = 1, Title = "Chemistry" },
-            new Course { StudentId = 1, Title = "Microeconomics" },
-            new Course { StudentId = 2, Title = "Macroeconomics" },
-            new Course { StudentId = 2, Title = "Calculus" },
-            new Course { StudentId = 2, Title = "Trigonometry" },
-            new Course { StudentId = 3, Title = "Composition" },
-            new Course { StudentId = 3, Title = "Literature" }
+            new CourseEF { StudentId = 1, Title = "Chemistry" },
+            new CourseEF { StudentId = 1, Title = "Microeconomics" },
+            new CourseEF { StudentId = 2, Title = "Macroeconomics" },
+            new CourseEF { StudentId = 2, Title = "Calculus" },
+            new CourseEF { StudentId = 2, Title = "Trigonometry" },
+            new CourseEF { StudentId = 3, Title = "Composition" },
+            new CourseEF { StudentId = 3, Title = "Literature" }
         };
 
         context.Courses.AddRange(courses);

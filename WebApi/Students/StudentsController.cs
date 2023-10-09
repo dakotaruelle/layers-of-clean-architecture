@@ -25,7 +25,6 @@ public class StudentsController : ControllerBase
     public async Task<ActionResult<UIStudentCourses>> GetStudentWithCourses(int id)
     {
         var student = await _studentsGateway.GetStudent(id);
-        var courses = await _studentsGateway.GetCoursesForStudent(id);
     
         if (student == null)
         {
@@ -33,7 +32,7 @@ public class StudentsController : ControllerBase
         }
 
         var studentsPresenter = new StudentsPresenter();
-        return studentsPresenter.MapToUiStudentCourses(student, courses);
+        return studentsPresenter.MapToUiStudentCourses(student);
     }
 
     [HttpPost("{id}")]

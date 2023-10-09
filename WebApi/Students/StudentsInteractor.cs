@@ -17,8 +17,7 @@ public class StudentsInteractor
             return false;
         }
 
-        var existingCourses = await _studentsGateway.GetCoursesForStudent(studentId);
-        if (existingCourses.Any(existingCourse => existingCourse.Title == courseTitle))
+        if (existingStudent.Courses.Any(existingCourse => existingCourse.Title == courseTitle))
         {
             return false;
         }

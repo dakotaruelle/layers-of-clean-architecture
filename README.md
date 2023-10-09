@@ -31,3 +31,10 @@ perform the use cases of the application.
 
 This moves the UI Logic (i.e. formatting of responses to the UI) to a presenter class. It is the job of the presenter
 to handle the concerns that only the UI cares about.
+
+## Add Models Specific to Business Layer
+
+The previous changes organized all the logic into their respective layers. This change is aimed at types in particular,
+and adds a new set of models specifically for the business layer. The goal is to remove the data access types from being
+used throughout the other layers. Now, when data is retrieved from the gateway, it return business layer types instead
+of data access layer types.

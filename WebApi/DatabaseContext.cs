@@ -13,12 +13,12 @@ public class DatabaseContext : DbContext
     {
     }
 
-    public DbSet<Student> Students { get; set; }
-    public DbSet<Course> Courses { get; set; }
+    public DbSet<StudentEF> Students { get; set; }
+    public DbSet<CourseEF> Courses { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Course>().ToTable("Course");
-        modelBuilder.Entity<Student>().ToTable("Student");
+        modelBuilder.Entity<CourseEF>().ToTable("Course");
+        modelBuilder.Entity<StudentEF>().ToTable("Student");
     }
 }
